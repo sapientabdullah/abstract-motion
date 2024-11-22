@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <title>Abstract Motion</title>
+</head>
+
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+
+    <div class="w-1/4 bg-gray-100 p-4 shadow-lg overflow-y-auto rounded-r-3xl">
+      <img class="-mt-4 select-none" src="./logo.png" alt="logo">
+      <div class="mb-2">
+        <label for="shape-selector" class="block font-medium mb-2">Select Shape</label>
+        <select id="shape-selector" class="w-full border border-gray-300 rounded-lg p-2">
+          <option value="circle">Circle</option>
+          <option value="square">Square</option>
+          <option value="triangle">Triangle</option>
+          <option value="pentagon">Pentagon</option>
+          <option value="hexagon">Hexagon</option>
+          <option value="star">Star</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label for="color-scheme-selector" class="block font-medium mb-2">Color Scheme</label>
+        <select id="color-scheme-selector" class="w-full border border-gray-300 rounded-lg p-2">
+          <option value="colorful">Colorful</option>
+          <option value="black-and-white">Black & White</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label for="art-style-selector" class="block font-medium mb-2">Art Style</label>
+        <select id="art-style-selector" class="w-full border border-gray-300 rounded-lg p-2">
+          <option value="swirl">Swirl</option>
+          <option value="random">Random</option>
+          <option value="zigzag">Zigzag</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label for="canvas-size-selector" class="block font-medium mb-2">Canvas Size</label>
+        <select id="canvas-size-selector" class="w-full border border-gray-300 rounded-lg p-2">
+          <option value="1920x1080">1920x1080 (HD)</option>
+          <option value="1080x1080">1080x1080 (Square)</option>
+          <option value="2480x3508">A4 (Print - Portrait)</option>
+          <option value="3508x2480">A4 (Print - Landscape)</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label for="shape-size-slider" class="block font-medium mb-2">Shape Size</label>
+        <input type="range" id="shape-size-slider" class="w-full" min="5" max="100" value="20">
+        <span id="shape-size-value" class="block text-center mt-2 text-gray-700">20</span>
+      </div>
+
+      <div class="mb-2">
+        <label for="shape-count-slider" class="block font-medium mb-2">Number of Shapes</label>
+        <input type="range" id="shape-count-slider" class="w-full" min="1" max="1000" value="100">
+        <span id="shape-count-value" class="block text-center mt-2 text-gray-700">100</span>
+      </div>
+
+      <div class="mb-2">
+        <label for="speed-factor-slider" class="block font-medium mb-2">Speed Factor</label>
+        <input type="range" id="speed-factor-slider" class="w-full" min="1" max="10" value="5">
+        <span id="speed-factor-value" class="block text-center mt-2 text-gray-700">5</span>
+      </div>
+
+      <div class="flex gap-2 mt-6">
+        <button id="start-button"
+          class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600">
+          Start
+        </button>
+        <button id="stop-button" class="w-full bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600">
+          Stop
+        </button>
+      </div>
+      <div class="flex gap-2 mt-6">
+        <button id="restart-button"
+          class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">
+          Restart
+        </button>
+        <button id="download-button"
+          class="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-600">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="flex-1 flex items-center justify-center bg-gray-200 absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <canvas id="canvas" class="shadow-md border-8 border-gray-200"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
